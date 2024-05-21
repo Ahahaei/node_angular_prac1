@@ -1,0 +1,19 @@
+<h2> Create User</h2>
+
+email: <input #email type="text">
+
+name: <input #name type="text">
+
+<button (click)="createUser(email.value, name.value)">Submit</button>
+
+<h1>Users</h1>
+
+<ul>
+  <li *ngFor="let user of users | async">
+    {{user.email}} - {{user.name}}
+    <button (click)="deleteUser(user._id)">Delete</button>
+    <button (click)="gotoEdit('edit/' + user._id)">Edit</button>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>

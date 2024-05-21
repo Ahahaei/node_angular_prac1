@@ -1,0 +1,15 @@
+<h2> Edit User</h2>
+
+
+<!-- <button (click)="Update(email.value, name.value)">Submit</button> -->
+<!-- <button (click)="createUser(email.value, name.value)">Update</button>  -->
+
+ <ul>
+    <li *ngFor="let user of user | async">
+        email: <input #email value="{{user.email}}" type="text">
+        name: <input  #name value="{{user.name}}" type="text">
+        <button (click)="updateUser(user._id,email.value, name.value)">Update</button> 
+
+    </li>
+</ul> 
+
